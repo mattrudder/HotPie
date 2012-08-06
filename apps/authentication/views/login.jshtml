@@ -1,0 +1,10 @@
+@!(model)
+@function body () {
+<form action="/sessions" method="POST">
+	<label for="user"><input type="text" id="user" name="user"></label>
+	<label for="password"><input type="password" id="password" name="password"></label>
+	<input type="submit" name="submit">
+</form>
+}
+
+@render('../../../views/layout', model, body)

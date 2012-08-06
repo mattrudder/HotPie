@@ -1,0 +1,11 @@
+@!(model, body)
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@model.title</title>
+    <link rel='stylesheet' href='/stylesheets/@(model.stylesheet).css' />
+  </head>
+  <body>
+    @body()
+  </body>
+</html>
