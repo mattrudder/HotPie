@@ -2,10 +2,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>@model.title</title>
+    <title>Hot Pie - @model.title</title>
     <link rel='stylesheet' href='/stylesheets/@(model.stylesheet).css' />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script type="text/javascript">
+		(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")
+    </script>
   </head>
   <body>
+  	<div id="header">
+  		<h1>@model.title</h1>
+  	</div>
+
+  	@for (var flashType in model.flash) {
+  		<p class="flash @flashType">@model.flash[flashType]</p>
+  	}
+
     @body()
   </body>
 </html>
